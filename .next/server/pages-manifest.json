@@ -3,7 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/group": "pages/group.js",
-  "/addgroup": "pages/addgroup.js",
-  "/addgroupexpense": "pages/addgroupexpense.js",
-  "/user": "pages/user.js"
+  "/addgroupexpense": "pages/addgroupexpense.js"
 }
