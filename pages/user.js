@@ -10,10 +10,14 @@ const columns = [
     width: 150,
   },
   {
-    field: 'group.id',
+    field: 'group',
     headerName: 'Deposite',
     width: 150,
     editable: true,
+    valueGetter: (params) => {
+      console.log( params.value );
+      return params.value.deposite;
+    }
   }
 ]
 const User = ({ members })=>{
