@@ -29,10 +29,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/adduser": [
+    "/user": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/adduser.js"
+      "static/chunks/pages/user.js"
     ]
   },
   "ampFirstPages": []

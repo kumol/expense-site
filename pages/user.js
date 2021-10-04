@@ -1,30 +1,38 @@
 import Header from "../components/UI/Header";
-
-const User = ()=>{
+//  import Button from '@mui/material/Button';
+import axios from "axios";
+const User = ({ members })=>{
     return (
-        <div>
-            <div>
-                <ul>
-                    <li>Hello 1 </li>
-                    <li>Hello 2</li>
-                    <li>Hello 3</li>
-                    <li>Hello 4</li>
-                    <li>Hello 5</li>
-                    <li>Hello 6</li>
-                    <li>Hello 7</li>
-                    <li>Hello 8</li>
-                    <li>Hello </li>
-                    <li>Hello </li>
-                    <li>Hello </li>
-                    <li>Hello </li>
-                    <li>Hello </li>
-                    <li>Hello </li>
-                    <li>Hello </li>
-                    <li>Hello </li>
-                </ul>
-            </div>
-        </div>
+        // <Button variant="contained" >
+        //   Go to the main page
+        // </Button>
+        <>
+        <h4>
+
+          User
+        </h4>
+
+        <ul>
+          {
+            members.map(m=>{
+              return <li>m.name</li>
+            })
+          }
+        </ul>
+        </>
     )
+}
+
+export async function getStaticProps() {
+  let id = 1;
+  let response = await axios.get(`localhost:5000/user/group/${id}`);
+  let members = response.members;
+  console.log(members);
+  return {
+    props: {
+      members,
+    },
+  }
 }
 
 export default  User
