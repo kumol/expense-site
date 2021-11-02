@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 
 const AddGroupExpense = () => {
     return(
+        <>
         <Grid container spacing={2}>
                 <Grid item xs={8} lg={8} mb={5}>
                     <TextField id="outlined-basic" label="amount" variant="outlined" />
@@ -15,6 +16,23 @@ const AddGroupExpense = () => {
                     <div>Hels</div>
                 </Grid>
         </Grid>
+
+        <div className="container d-flex">
+            <Grid>
+                <div className="col-md-6 col-sm-6">
+                    <TextField
+                    label="Amount"
+                    id="outlined-small"
+                    defaultValue="value"
+                    size="small"
+                    />
+                </div>
+                <div className="col-md-6 col-sm-6">
+
+                </div>
+            </Grid>
+        </div>
+        </>
     )
 }
 
