@@ -2,10 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/": "pages/index.js",
-  "/group": "pages/group.js",
-  "/addgroup": "pages/addgroup.js",
-  "/adduser": "pages/adduser.js",
-  "/user": "pages/user.js",
-  "/addgroupexpense": "pages/addgroupexpense.js"
+  "/addgroupexpense": "pages/addgroupexpense.js",
+  "/user": "pages/user.js"
 }
