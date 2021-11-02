@@ -10,14 +10,24 @@ const columns = [
     width: 150,
   },
   {
-    field: 'group',
+    field: 'deposite',
     headerName: 'Deposite',
     width: 150,
-    editable: true,
-    valueGetter: (params) => {
-      console.log( params.value );
-      return params.value.deposite;
-    }
+    // editable: true,
+    // valueGetter: (params) => {
+    //   console.log(`depositie ${params.value.deposite}`)
+    //   return params.value.deposite;
+    // }
+  },
+  {
+    field: 'expense',
+    headerName: 'Expense',
+    width: 150,
+  },
+  {
+    field: 'mealCount',
+    headerName: 'Total Meal',
+    width: 150
   }
 ]
 const User = ({ members })=>{
@@ -31,13 +41,13 @@ const User = ({ members })=>{
           User
         </h4>
 
-        <ul>
+        {/* <ul>
           {
             members.map(m=>{
               return <li key={m.group.id}>{m.group.id}</li>
             })
           }
-        </ul>
+        </ul> */}
 
         <div style={{ height: 400, width: '100%' }}>
           <DataGrid
@@ -54,15 +64,18 @@ const User = ({ members })=>{
 }
 
 export async function getServerSideProps() {
-  let id = 1;
-  console.log("loaded for ",id);
-  let response = await axios.get(`http://localhost:5000/user/group/${id}`);
-  let members = response.data.members;
-  members = members ? members : []
-  return {
-    props: {
-      members,
-    },
+  try{
+    let id = 1;
+    let response = await axios.get(`http://localhost:5000/user/group/${id}`);
+    let members = response.data.members;
+    members = members ? members : [];
+    return {
+      props: {
+        members,
+      },
+    }
+  }catch(err){
+    console.log(err);
   }
 }
 
