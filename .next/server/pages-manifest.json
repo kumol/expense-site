@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/user": "pages/user.js",
-  "/addgroupexpense": "pages/addgroupexpense.js"
+  "/group-expenses": "pages/group-expenses.js",
+  "/addgroupexpense": "pages/addgroupexpense.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
 }

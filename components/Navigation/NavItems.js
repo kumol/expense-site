@@ -23,7 +23,9 @@ const NavItems = ({props, children})=>{
                 <li className={classes.li2}>
                     <Link href="/addgroupexpense" >Add Group expense</Link>
                 </li>
-                
+                <li className={classes.li2}>
+                    <Link href="/group-expenses" >Group expense</Link>
+                </li>
                 
             </ul>
           </div>

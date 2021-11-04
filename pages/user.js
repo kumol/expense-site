@@ -32,22 +32,11 @@ const columns = [
 ]
 const User = ({ members })=>{
     return (
-        // <Button variant="contained" >
-        //   Go to the main page
-        // </Button>
         <>
         <h4>
 
           User
         </h4>
-
-        {/* <ul>
-          {
-            members.map(m=>{
-              return <li key={m.group.id}>{m.group.id}</li>
-            })
-          }
-        </ul> */}
 
         <div style={{ height: 400, width: '100%' }}>
           <DataGrid
