@@ -7,12 +7,12 @@ import { useState } from "react";
 import classes from "../styles/addgroupexpense.module.css";
 import axios from "axios";
 const AddGroupExpense = () => {
-    let [cost, setCost] = useState(0);
+  let [cost, setCost] = useState(0);
   let [details, setDetails] = useState("");
   let [isValid, setIsValid] = useState(true);
-  const onChangeHandler = (event)=>{
+  const onChangeHandler = (event) => {
     event.preventDefault();
-    if(event.target.name == "cost") {
+    if (event.target.name == "cost") {
       setCost(+event.target.value);
       isValidate("cost", +event.target.value);
     } else {
@@ -20,34 +20,34 @@ const AddGroupExpense = () => {
       isValidate("details", +event.target.value);
     }
   }
-  const onSave = async(event)=> {
+  const onSave = async (event) => {
     event.preventDefault();
     let body = {
-        "user": 1,
-        "spentMoney": cost,
-        "details": details,
-        "group": 1
+      "user": 1,
+      "spentMoney": cost,
+      "details": details,
+      "group": 1
     }
     let response = await axios.post('http://localhost:5000/group-expense/', body);
     console.log(response);
   }
   const isValidate = (target, value) => {
-    if(target=="cost"){
+    if (target == "cost") {
       return setIsValid(!(value > 0 && details != ""));
-    }else{
+    } else {
       return setIsValid(!(cost > 0 && value != ""));
-    }    
+    }
   }
   return (
-    <div className='row d-flex' className={classes.backg}>
-      <div className="container">
-        <div className="row pt_20px">
-          <div className="col-md-3 pb_20px" >
+    <div >
+      <div>
+        <div>
+          <div  >
             Add area
           </div>
-          <div className="col-md-6 pb_20px">
-            <div className='row pb_20px'> 
-              <div className='col-md-6 pb_20px'>
+          <div>
+            <div>
+              <div>
                 <TextField
                   label="Cost"
                   id="outlined-size-small"
@@ -55,12 +55,12 @@ const AddGroupExpense = () => {
                   size="small"
                   name='cost'
                   onChange={onChangeHandler}
-                  value = {cost}
+                  value={cost}
                   fullWidth
                   id="margin-none"
                 />
               </div>
-              <div className='col-md-6'>
+              <div>
                 <TextField
                   id="outlined-textarea"
                   variant="outlined"
@@ -81,7 +81,7 @@ const AddGroupExpense = () => {
                 <Button disabled={isValid} variant="contained" size="small" onClick={onSave}>Submit</Button></div>
             </div>
           </div>
-          <div className="col-md-3 pb_20px" >
+          <div>
             add area
           </div>
         </div>
